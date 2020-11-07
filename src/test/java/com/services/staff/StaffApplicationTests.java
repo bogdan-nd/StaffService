@@ -1,10 +1,10 @@
-package com.services.vet;
+package com.services.staff;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class VetApplicationTests {
+class StaffApplicationTests {
 
     @Test
     void contextLoads() {

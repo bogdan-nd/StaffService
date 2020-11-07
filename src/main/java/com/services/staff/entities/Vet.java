@@ -1,4 +1,4 @@
-package com.services.vet.entities;
+package com.services.staff.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

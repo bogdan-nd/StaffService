@@ -1,9 +1,9 @@
-package com.services.vet.controller;
+package com.services.staff.controller;
 
 
-import com.services.vet.dto.VetDTO;
-import com.services.vet.entities.Vet;
-import com.services.vet.services.VetService;
+import com.services.staff.dto.VetDTO;
+import com.services.staff.entities.Vet;
+import com.services.staff.services.VetService;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

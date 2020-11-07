@@ -1,7 +1,7 @@
-package com.services.vet.services;
+package com.services.staff.services;
 
-import com.services.vet.entities.Vet;
-import com.services.vet.repo.VetRepository;
+import com.services.staff.repo.VetRepository;
+import com.services.staff.entities.Vet;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

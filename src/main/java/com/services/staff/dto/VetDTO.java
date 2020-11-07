@@ -1,4 +1,4 @@
-package com.services.vet.dto;
+package com.services.staff.dto;
 
 import lombok.Data;
 

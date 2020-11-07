@@ -1,13 +1,13 @@
-package com.services.vet;
+package com.services.staff;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class VetApplication {
+public class StaffApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(VetApplication.class, args);
+        SpringApplication.run(StaffApplication.class, args);
     }
 
 }
