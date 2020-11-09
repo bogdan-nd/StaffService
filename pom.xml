@@ -12,7 +12,7 @@
     <artifactId>staff</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>staff</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Staff service for A3</description>
 
     <properties>
         <java.version>11</java.version>

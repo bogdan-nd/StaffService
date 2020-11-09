@@ -1,4 +1,4 @@
-package com.services.staff.controller;
+package com.services.staff.controllers;
 
 
 import com.services.staff.dto.VetDTO;
@@ -6,6 +6,8 @@ import com.services.staff.entities.Vet;
 import com.services.staff.services.VetService;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
+import org.aspectj.weaver.ast.Not;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,8 +26,14 @@ public class VetController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Vet> showVetById(@PathVariable UUID id) throws NotFoundException {
-        return ResponseEntity.ok(vetService.getById(id));
+    public ResponseEntity<?> showVetById(@PathVariable UUID id) {
+        try {
+            return ResponseEntity.ok(vetService.getById(id));
+        } catch (NotFoundException exception) {
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body(exception.getMessage());
+        }
     }
 
     @PostMapping
