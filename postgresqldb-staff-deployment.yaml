@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: postgresqldb-staff
+  name: postgresqldb-staff
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: postgresqldb-staff
+  strategy: { }
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: postgresqldb-staff
+    spec:
+      containers:
+        - env:
+            - name: POSTGRES_DB
+              value: staffservice
+            - name: POSTGRES_PASSWORD
+              value: "password"
+            - name: POSTGRES_USER
+              value: postgres
+          image: postgres
+          imagePullPolicy: ""
+          name: postgresqldb-staff
+          ports:
+            - containerPort: 5432
+          resources: { }
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes:
+        - name: postgres-data-staff
+          persistentVolumeClaim:
+            claimName: postgres-data-staff
+status: { }
