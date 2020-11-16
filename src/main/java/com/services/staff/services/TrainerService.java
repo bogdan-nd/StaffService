@@ -11,12 +11,14 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.UUID;
 
 @Service
 @AllArgsConstructor
 public class TrainerService {
     private final TrainerRepository repository;
+    private final Random random;
 
     @Transactional
     public List<Trainer> getAll() {
@@ -24,8 +26,13 @@ public class TrainerService {
     }
 
     @Transactional
-    public List<Trainer> getSuitable(SportsCategory category) {
-        return repository.getSuitableTrainers(category.ordinal());
+    public Trainer getSuitable(SportsCategory category) throws NotFoundException{
+        List<Trainer> suitableTrainers =  repository.getSuitableTrainers(category.ordinal());
+
+        if(suitableTrainers.size() == 0)
+                throw new NotFoundException("There are any suitable trainers");
+
+        return suitableTrainers.get(random.nextInt(suitableTrainers.size()));
     }
 
     @Transactional

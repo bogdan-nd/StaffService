@@ -7,6 +7,7 @@ import com.services.staff.enums.SportsCategory;
 import com.services.staff.services.TrainerService;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
+import org.aspectj.weaver.ast.Not;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,19 +27,24 @@ public class TrainerContoller {
     }
 
     @GetMapping("client-category/{category}")
-    public ResponseEntity<List<Trainer>> getSuitableTrainer(@PathVariable SportsCategory category){
-        return ResponseEntity.ok(trainerService.getSuitable(category));
+    public ResponseEntity<Trainer> getSuitableTrainer(@PathVariable SportsCategory category){
+        try {
+            return ResponseEntity.ok(trainerService.getSuitable(category));
+        }
+        catch (NotFoundException e){
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND).build();
+        }
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<?> showTrainerById(@PathVariable UUID id){
+    public ResponseEntity<Trainer> showTrainerById(@PathVariable UUID id){
         try{
             return ResponseEntity.ok(trainerService.getById(id));
         }
         catch (NotFoundException exception) {
             return ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
-                    .body(exception.getMessage());
+                    .status(HttpStatus.NOT_FOUND).build();
         }
 
     }

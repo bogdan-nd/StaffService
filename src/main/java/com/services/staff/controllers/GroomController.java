@@ -25,14 +25,13 @@ public class GroomController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<?> showGroomById(@PathVariable UUID id){
+    public ResponseEntity<Groom> showGroomById(@PathVariable UUID id){
         try{
         return ResponseEntity.ok(groomService.getById(id));
         }
         catch (NotFoundException exception) {
             return  ResponseEntity
-                    .status(HttpStatus.OK)
-                    .body(exception.getMessage());
+                    .status(HttpStatus.OK).build();
         }
     }
 

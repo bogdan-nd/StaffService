@@ -26,13 +26,12 @@ public class VetController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<?> showVetById(@PathVariable UUID id) {
+    public ResponseEntity<Vet> showVetById(@PathVariable UUID id) {
         try {
             return ResponseEntity.ok(vetService.getById(id));
         } catch (NotFoundException exception) {
             return ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
-                    .body(exception.getMessage());
+                    .status(HttpStatus.NOT_FOUND).build();
         }
     }
 
