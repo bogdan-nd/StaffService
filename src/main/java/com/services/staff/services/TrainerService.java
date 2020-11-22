@@ -18,7 +18,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class TrainerService {
     private final TrainerRepository repository;
-    private final Random random;
 
     @Transactional
     public List<Trainer> getAll() {
@@ -32,7 +31,7 @@ public class TrainerService {
         if(suitableTrainers.size() == 0)
                 throw new NotFoundException("There are any suitable trainers");
 
-        return suitableTrainers.get(random.nextInt(suitableTrainers.size()));
+        return suitableTrainers.get(0);
     }
 
     @Transactional

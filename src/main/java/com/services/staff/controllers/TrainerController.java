@@ -7,7 +7,6 @@ import com.services.staff.enums.SportsCategory;
 import com.services.staff.services.TrainerService;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
-import org.aspectj.weaver.ast.Not;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +17,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("trainers")
 @AllArgsConstructor
-public class TrainerContoller {
+public class TrainerController {
     private final TrainerService trainerService;
 
     @GetMapping
