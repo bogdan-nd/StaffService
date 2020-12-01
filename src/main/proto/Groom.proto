@@ -11,7 +11,7 @@ message ProtoGroom{
   int32 horseFedNumber = 5;
 }
 
-message Empty{
+message GroomEmpty{
 }
 
 message GroomResponse{
@@ -29,8 +29,8 @@ message IdRequest{
 }
 
 service GroomService{
-  rpc showGrooms(Empty) returns (GroomResponse);
+  rpc showGrooms(GroomEmpty) returns (GroomResponse);
   rpc showGroomById(IdRequest) returns (GroomResponse);
   rpc addGroom(GroomRequest) returns (GroomResponse);
-  rpc deleteGroom(IdRequest) returns (Empty);
+  rpc deleteGroom(IdRequest) returns (GroomEmpty);
 }

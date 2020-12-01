@@ -18,7 +18,7 @@ public class VetGrpcController extends VetServiceGrpc.VetServiceImplBase {
     private final VetService vetService;
 
     @Override
-    public void showVets(Empty request, StreamObserver<VetResponse> responseObserver) {
+    public void showVets(VetEmpty request, StreamObserver<VetResponse> responseObserver) {
         List<Vet> vets = vetService.getAll();
         List<ProtoVet> protoVets = transformVetsToProto(vets);
 
@@ -59,7 +59,7 @@ public class VetGrpcController extends VetServiceGrpc.VetServiceImplBase {
     }
 
     @Override
-    public void deleteVet(IdRequest request, StreamObserver<Empty> responseObserver) {
+    public void deleteVet(IdRequest request, StreamObserver<VetEmpty> responseObserver) {
         String id = request.getId();
         UUID vetId = UUID.fromString(id);
         vetService.deleteById(vetId);

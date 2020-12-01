@@ -21,7 +21,7 @@ public class GroomGrpcController extends GroomServiceGrpc.GroomServiceImplBase {
     private final GroomService groomService;
 
     @Override
-    public void showGrooms(Empty request, StreamObserver<GroomResponse> responseObserver) {
+    public void showGrooms(GroomEmpty request, StreamObserver<GroomResponse> responseObserver) {
         List<Groom> grooms = groomService.getAll();
         List<ProtoGroom> protoGrooms = transformGroomsToProto(grooms);
 
@@ -62,7 +62,7 @@ public class GroomGrpcController extends GroomServiceGrpc.GroomServiceImplBase {
     }
 
     @Override
-    public void deleteGroom(IdRequest request, StreamObserver<Empty> responseObserver) {
+    public void deleteGroom(IdRequest request, StreamObserver<GroomEmpty> responseObserver) {
         String id = request.getId();
         UUID groomId = UUID.fromString(id);
         groomService.deleteById(groomId);

@@ -22,7 +22,7 @@ public class TrainerGrpcController extends TrainerServiceGrpc.TrainerServiceImpl
     private final TrainerService trainerService;
 
     @Override
-    public void showTrainers(Empty request, StreamObserver<TrainerResponse> responseObserver) {
+    public void showTrainers(TrainerEmpty request, StreamObserver<TrainerResponse> responseObserver) {
         List<Trainer> trainers = trainerService.getAll();
         List<ProtoTrainer> protoTrainers = transformTrainerToProto(trainers);
 
@@ -84,7 +84,7 @@ public class TrainerGrpcController extends TrainerServiceGrpc.TrainerServiceImpl
     }
 
     @Override
-    public void deleteTrainer(IdRequest request, StreamObserver<Empty> responseObserver) {
+    public void deleteTrainer(IdRequest request, StreamObserver<TrainerEmpty> responseObserver) {
         String id = request.getId();
         UUID trainersId = UUID.fromString(id);
         trainerService.deleteById(trainersId);

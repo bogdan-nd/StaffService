@@ -11,7 +11,7 @@ message ProtoTrainer{
   int32 trainingPrice = 5;
 }
 
-message Empty{
+message TrainerEmpty{
 }
 
 message TrainerResponse{
@@ -34,9 +34,9 @@ message IdRequest{
 }
 
 service TrainerService{
-  rpc showTrainers(Empty) returns (TrainerResponse);
+  rpc showTrainers(TrainerEmpty) returns (TrainerResponse);
   rpc getSuitableTrainer(SportCategoryRequest) returns(TrainerResponse);
   rpc showTrainerById(IdRequest) returns (TrainerResponse);
   rpc addTrainer(TrainerRequest) returns (TrainerResponse);
-  rpc deleteTrainer(IdRequest) returns (Empty);
+  rpc deleteTrainer(IdRequest) returns (TrainerEmpty);
 }

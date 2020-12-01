@@ -11,7 +11,7 @@ message ProtoVet{
   int32 recoveredHorsesNumber = 5;
 }
 
-message Empty{
+message VetEmpty{
 }
 
 message VetResponse{
@@ -29,8 +29,8 @@ message IdRequest{
 }
 
 service VetService{
-  rpc showVets(Empty) returns (VetResponse);
+  rpc showVets(VetEmpty) returns (VetResponse);
   rpc showVetById(IdRequest) returns (VetResponse);
   rpc addVet(VetRequest) returns (VetResponse);
-  rpc deleteVet(IdRequest) returns (Empty);
+  rpc deleteVet(IdRequest) returns (VetEmpty);
 }
