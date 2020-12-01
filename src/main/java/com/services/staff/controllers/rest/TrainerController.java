@@ -1,4 +1,4 @@
-package com.services.staff.controllers;
+package com.services.staff.controllers.rest;
 
 
 import com.services.staff.dto.TrainerDTO;
