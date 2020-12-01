@@ -32,7 +32,7 @@ public class GroomGrpcController extends GroomServiceGrpc.GroomServiceImplBase {
     }
 
     @Override
-    public void showGroomById(IdRequest request, StreamObserver<GroomResponse> responseObserver) {
+    public void showGroomById(GroomIdRequest request, StreamObserver<GroomResponse> responseObserver) {
         String id = request.getId();
         UUID groomId = UUID.fromString(id);
         try {
@@ -62,7 +62,7 @@ public class GroomGrpcController extends GroomServiceGrpc.GroomServiceImplBase {
     }
 
     @Override
-    public void deleteGroom(IdRequest request, StreamObserver<GroomEmpty> responseObserver) {
+    public void deleteGroom(GroomIdRequest request, StreamObserver<GroomEmpty> responseObserver) {
         String id = request.getId();
         UUID groomId = UUID.fromString(id);
         groomService.deleteById(groomId);

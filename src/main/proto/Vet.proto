@@ -24,13 +24,13 @@ message VetRequest{
   int32 carePrice = 3;
 }
 
-message IdRequest{
+message VetIdRequest{
   string id=1;
 }
 
 service VetService{
   rpc showVets(VetEmpty) returns (VetResponse);
-  rpc showVetById(IdRequest) returns (VetResponse);
+  rpc showVetById(VetIdRequest) returns (VetResponse);
   rpc addVet(VetRequest) returns (VetResponse);
-  rpc deleteVet(IdRequest) returns (VetEmpty);
+  rpc deleteVet(VetIdRequest) returns (VetEmpty);
 }

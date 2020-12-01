@@ -29,7 +29,7 @@ public class VetGrpcController extends VetServiceGrpc.VetServiceImplBase {
     }
 
     @Override
-    public void showVetById(IdRequest request, StreamObserver<VetResponse> responseObserver) {
+    public void showVetById(VetIdRequest request, StreamObserver<VetResponse> responseObserver) {
         String id = request.getId();
         UUID vetId = UUID.fromString(id);
         try {
@@ -59,7 +59,7 @@ public class VetGrpcController extends VetServiceGrpc.VetServiceImplBase {
     }
 
     @Override
-    public void deleteVet(IdRequest request, StreamObserver<VetEmpty> responseObserver) {
+    public void deleteVet(VetIdRequest request, StreamObserver<VetEmpty> responseObserver) {
         String id = request.getId();
         UUID vetId = UUID.fromString(id);
         vetService.deleteById(vetId);

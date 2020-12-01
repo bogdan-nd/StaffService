@@ -24,13 +24,13 @@ message GroomRequest{
   int32 carePrice = 3;
 }
 
-message IdRequest{
+message GroomIdRequest{
   string id=1;
 }
 
 service GroomService{
   rpc showGrooms(GroomEmpty) returns (GroomResponse);
-  rpc showGroomById(IdRequest) returns (GroomResponse);
+  rpc showGroomById(GroomIdRequest) returns (GroomResponse);
   rpc addGroom(GroomRequest) returns (GroomResponse);
-  rpc deleteGroom(IdRequest) returns (GroomEmpty);
+  rpc deleteGroom(GroomIdRequest) returns (GroomEmpty);
 }

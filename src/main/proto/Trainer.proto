@@ -29,14 +29,14 @@ message TrainerRequest{
   int32 carePrice = 4;
 }
 
-message IdRequest{
+message TrainerIdRequest{
   string id=1;
 }
 
 service TrainerService{
   rpc showTrainers(TrainerEmpty) returns (TrainerResponse);
   rpc getSuitableTrainer(SportCategoryRequest) returns(TrainerResponse);
-  rpc showTrainerById(IdRequest) returns (TrainerResponse);
+  rpc showTrainerById(TrainerIdRequest) returns (TrainerResponse);
   rpc addTrainer(TrainerRequest) returns (TrainerResponse);
-  rpc deleteTrainer(IdRequest) returns (TrainerEmpty);
+  rpc deleteTrainer(TrainerIdRequest) returns (TrainerEmpty);
 }
