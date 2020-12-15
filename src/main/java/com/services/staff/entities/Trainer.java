@@ -1,6 +1,6 @@
 package com.services.staff.entities;
 
-import com.services.staff.enums.SportsCategory;
+import com.services.staff.entities.enums.SportsCategory;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

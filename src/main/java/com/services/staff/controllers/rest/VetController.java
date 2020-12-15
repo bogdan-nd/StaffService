@@ -1,12 +1,11 @@
 package com.services.staff.controllers.rest;
 
 
-import com.services.staff.dto.VetDTO;
+import com.services.staff.controllers.rest.dto.VetDTO;
 import com.services.staff.entities.Vet;
 import com.services.staff.services.VetService;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
-import org.aspectj.weaver.ast.Not;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

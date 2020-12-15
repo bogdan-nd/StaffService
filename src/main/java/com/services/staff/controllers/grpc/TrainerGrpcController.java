@@ -1,11 +1,8 @@
 package com.services.staff.controllers.grpc;
 
-import com.services.grpc.server.groom.GroomResponse;
-import com.services.grpc.server.groom.ProtoGroom;
 import com.services.grpc.server.trainer.*;
-import com.services.staff.entities.Groom;
 import com.services.staff.entities.Trainer;
-import com.services.staff.enums.SportsCategory;
+import com.services.staff.entities.enums.SportsCategory;
 import com.services.staff.services.TrainerService;
 import io.grpc.stub.StreamObserver;
 import javassist.NotFoundException;

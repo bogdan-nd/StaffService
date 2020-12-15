@@ -1,11 +1,10 @@
 package com.services.staff.controllers.rest;
 
-import com.services.staff.dto.GroomDTO;
+import com.services.staff.controllers.rest.dto.GroomDTO;
 import com.services.staff.entities.Groom;
 import com.services.staff.services.GroomService;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

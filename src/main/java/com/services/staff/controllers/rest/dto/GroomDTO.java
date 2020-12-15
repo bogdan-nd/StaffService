@@ -1,4 +1,4 @@
-package com.services.staff.dto;
+package com.services.staff.controllers.rest.dto;
 
 import lombok.Data;
 

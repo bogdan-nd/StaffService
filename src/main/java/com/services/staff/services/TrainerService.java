@@ -2,7 +2,7 @@ package com.services.staff.services;
 
 
 import com.services.staff.entities.Trainer;
-import com.services.staff.enums.SportsCategory;
+import com.services.staff.entities.enums.SportsCategory;
 import com.services.staff.repo.TrainerRepository;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
 import java.util.UUID;
 
 @Service

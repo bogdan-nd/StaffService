@@ -1,4 +1,4 @@
-package com.services.staff.enums;
+package com.services.staff.entities.enums;
 
 public enum SportsCategory {
     BEGINNER, KMS, MS, MSMK;

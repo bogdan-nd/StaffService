@@ -1,9 +1,9 @@
 package com.services.staff.controllers.rest;
 
 
-import com.services.staff.dto.TrainerDTO;
+import com.services.staff.controllers.rest.dto.TrainerDTO;
 import com.services.staff.entities.Trainer;
-import com.services.staff.enums.SportsCategory;
+import com.services.staff.entities.enums.SportsCategory;
 import com.services.staff.services.TrainerService;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
