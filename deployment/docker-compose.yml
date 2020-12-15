@@ -4,7 +4,7 @@ services:
     network_mode: bridge
     container_name: staffservice
     image: bogdannaida/staff-service:latest
-    build: ./
+    build: ..
     ports:
       - "8084:8084"
       - "9090:9090"
